@@ -2,13 +2,10 @@
 
 # RAiD API
 
-The [Data LifeCycle Framework](www.dlc.edu.au) (DLC) has been initiated by five primary organisations; [Australian Access Federation](https://aaf.edu.au/) (AAF), [Australia’s Academic and Research Network](https://www.aarnet.edu.au/) (AARNet), [Australian National Data Service](http://www.ands.org.au/) (ANDS), [National eResearch Collaboration Tools and Resources](https://nectar.org.au/) (NeCTAR) and [Research Data Services](http://www.rds.edu.au/) (RDS).
+The Research Activity iDentifier (RAiD) is a persistent identifier for research projects and supports data management across all phases of research by placing the research activity (or project) at the centre of research workflows, creating a chain of provenance, improving discovery and access, and ensuring that output is attributable and reportable. 
+It also supports the F.A.I.R Principles of making research data Findable, Accessible, Interoperable, and Re-usable.
 
-The DLCF is a nationwide effort to connect research resources and activities such that researchers can make the best use of existing national, state-based, local, and commercial eResearch tools. It aims to provide a simple path to reliable provenance, more effective collaboration across organisations and assist researchers to position themselves to address the growing potential of increasingly open data.
-
-The DLCF will connect critical elements and points in time of the data journey from grant approval through to project finalisation, results publication and archiving. It will leverage existing eResearch investment to provide a flexible and dynamic national framework supporting research.
-
-The Resource and Activity Persistent identifier (RAiD) is the first of the enabling technologies required for the DLCF.*RAiD API* is a '**proof of concept**' [Serverless](https://aws.amazon.com/serverless/) implementation designed to be hosted on Amazon Web Services (AWS) that will help create and manage RAiDs.
+Version 1.1 of the *RAiD API* is a '**proof of concept**' [Serverless](https://aws.amazon.com/serverless/). Its implementation is designed to be hosted on Amazon Web Services (AWS) that will help create and manage RAiDs.
 
 ## Current version: 1.1.1
 
@@ -28,9 +25,9 @@ AWS serverless applications are able to conform to a [multi-tier architecture]( 
 Development and deployment of the framework will require the following:
 
 ### Third-Party Integrations
-*RAiD* uses the [*ANDS Handle Service*](https://www.ands.org.au/online-services/handle-service) to generate unique and citable 'handles'. This allows organisations and researchers to have a 'clickable' link in their datasets, collections and papers. Handles act as the primary key for a RAiD and are associated to a URL content path which can be changed, but the handle will remain the same. The following steps a required for *RAiD API* to interact with the minting service:
+*RAiD* uses the [*ARDC Handle Service*](https://www.ands.org.au/online-services/handle-service) to generate unique and citable 'handles'. This allows organisations and researchers to have a 'clickable' link in their datasets, collections and papers. Handles act as the primary key for a RAiD and are associated to a URL content path which can be changed, but the handle will remain the same. The following steps a required for *RAiD API* to interact with the minting service:
   1. Create a VPC and subnet in AWS that will have all outbound traffic come from a single static IPv4 Address.
-  2. [Register with ANDS](https://documentation.ands.org.au/pages/viewpage.action?pageId=59409375), providing the static IP Address from the previous step for the demo and live handle service.
+  2. [Register with ARDC](https://documentation.ands.org.au/pages/viewpage.action?pageId=59409375), providing the static IP Address from the previous step for the demo and live handle service.
   3. Use the 'appID' for the 'AndsAppId' parameter in the deployment steps mentioned later in this document.
 
 ### AWS Environment Prerequisites
